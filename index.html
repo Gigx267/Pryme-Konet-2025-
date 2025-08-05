@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PrymeKonet - Nigeria's premier event platform for discovering and hosting unforgettable experiences. Find parties, concerts, and cultural events across Nigeria.">
+    <meta name="keywords" content="Nigeria events, party tickets, event hosting, Lagos parties, Abuja events, Nigerian nightlife">
+    <title>PrymeKonet | Next Level Entertainment in Nigeria</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preload" as="image" href="ev1.JPG">
+    <link rel="preload" as="image" href="ev2.JPG">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="pryme-nav">
+    <div class="nav-container">
+        <!-- Logo -->
+        <a href="#" class="nav-logo">
+            Pryme<span>Konet</span>
+            <span class="logo-sub">Nigeria's Party & Events  Hub</span>
+        </a>
+        
+        <!-- Main Navigation -->
+        <div class="nav-links">
+            <a    href="#home" class="nav-link active">Home</a>
+            <a  style="color: #d1d1e0;"   href="about.html" class="nav-link">About  </a>
+
+            <a style="color: #d1d1e0;"  style="color: #d1d1e0;"   href="events.html" class="nav-link">Events</a>
+            <a style="color: #d1d1e0;"   href="services.html" class="nav-link">Services</a>
+            <a  style="color: #d1d1e0;"   href="host.html" class="nav-link">Host With Us   </a>
+
+            <a   style="color: #d1d1e0;"  href="contact.html" class="nav-link">Contact us </a>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="nav-cta">
+    
+            <a href="tickets.html" class="btn-signup">Get Tickets </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle navigation">
+            <span class="menu-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<style>
+/* PrymeKonet Navbar Styles */
+.pryme-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255, 214, 102, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #FF6B35;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-logo span {
+    color: #00A7E1;
+    font-family: 'Bungee', cursive;
+}
+
+.logo-sub {
+    font-size: 0.6rem;
+    font-family: 'Quicksand', sans-serif;
+    color: #FFD166;
+    margin-top: -5px;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    color: #FFD166;
+}
+
+.nav-link {
+    color: #F7FFF7;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #FFD166;
+}
+
+.nav-link.active {
+    color: #FF6B35;
+}
+
+.nav-link.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #FF6B35;
+    border-radius: 2px;
+}
+
+.nav-cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-login {
+    color: #F7FFF7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-login:hover {
+    color: #FFD166;
+}
+
+.btn-signup {
+    background: linear-gradient(45deg, #FF6B35, #FFD166);
+    color: #1A1A2E;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #F7FFF7;
+    position: relative;
+}
+
+.menu-icon:before,
+.menu-icon:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #F7FFF7;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.menu-icon:before {
+    top: -8px;
+}
+
+.menu-icon:after {
+    top: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #1A1A2E;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-cta {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-menu-btn.active .menu-icon {
+        background: transparent;
+    }
+    
+    .mobile-menu-btn.active .menu-icon:before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .mobile-menu-btn.active .menu-icon:after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<script>
+// Mobile menu toggle functionality
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelector('.mobile-menu-btn').classList.remove('active');
+        document.querySelector('.nav-links').classList.remove('active');
+    });
+});
+</script>
+
+
+
+   
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
+            <source src="https://cdn.pixabay.com/video/2024/02/18/201013-914542893_tiny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay">
+            <h1 class="hero-title">Embrace <span>PRYMEKONET.</span></h1>
+            <p class="hero-subtitle">Your passport to Nigeria's hottest Events. Discover, attend, or host epic events across the country.</p>
+           
+        </div>
+    </section>
+      <!-- Vision to Reality Section -->
+
+<!-- Latest Event Section -->
+<section class="vision-reality">
+  <div class="vr-container">
+     <div class="bento-block bento-event-info">  <BR><BR>
+      <div class="event-emoji">🌴🎉</div>
+      <h1 class="event-title-main">LIGHT & CHILL is HERE with VIBES!</h1>
+      <p class="event-subtitle">Ready to sip, connect, dance, and glow under the tropical weather?</p>
+      <ul class="event-features">
+        <li>🎶 <strong>Not your regular hangout</strong> — where <span>music meets games</span></li>
+        <li>🎨 <strong>Face paint meets fun</strong> — express yourself</li>
+        <li>✨ <strong>YOU meet the moment</strong> — be the vibe!</li>
+      </ul>   <img src="lc (1).jpg" alt="Curated event selection" class="vr-image">
+      <div class="event-details">
+        <div class="event-location"><span>📍</span> <b>Siam City Garden, Abuja</b></div>
+        <div class="event-date"><span>📅</span> <b>Sunday, Aug 31st</b></div>
+        <div class="event-time"><span>🕓</span> <b>4PM sharp — come early, stay late!</b></div>
+      </div>
+      <div class="event-tickets">
+        <div>🎟️ <b>Early Bird: 5K</b> &nbsp; | &nbsp; <b>Reg: 7K</b></div>
+         <div class="event-callout">
+        <span>Siam City Garden, Abuja (Come in style 👑)</span>
+      </div>
+        <div </div>
+      </div>
+      <div class="event-callout">
+        <span>Tag your crew — Let’s make magic under the sun. 🔥</span>
+      </div>
+      <div class="event-hashtags">
+        <span>#LightAndChill #TropicanaVibes #AbujaEvents #SipAndChill #GlowUnderThePalm #VibeInYourPryme #lighton</span>
+      </div>
+      <a href="tickets.html" class="btn-event-tickets">Purchase Ticket</a>
+    </div>
+    
+  
+    
+   
+  </div>
+
+    <div class="vr-content">
+      <!-- Main Platform Description -->
+      <div class="vr-platform">
+        <div class="vr-text">
+          <p>Our platform empowers event organizers to transform their visions into reality, providing them with the tools and reach to captivate audiences and build lasting legacies. For partygoers, we offer a curated selection of events, ensuring that every night is filled with excitement and new connections.</p>
+           <h1 class="hero-title">Hottest <span>Party of the Summer .</span></h1>
+          <div class="vr-media">
+            <video autoplay loop muted playsinline class="vr-microvideo">
+              <source src="gt (1).mp4" type="video/mp4">
+              <img src="gt (1).jpg" alt="Excited event attendees">
+            </video>
+            <img src="lc (2).jpg" alt="Curated event selection" class="vr-image">
+
+          </div>
+          
+          <p>But PrymeKonet is more than just a marketplace; it's a community. We foster a sense of belonging, encouraging users to host their own events, share their passions, and connect with like-minded individuals. By building a loyal following on PrymeKonet, you become an integral part of our thriving ecosystem, shaping the future of entertainment together.</p>
+        </div>
+      </div>
+
+   
+    </div>
+  </div>
+</section>
+
+<style>
+/* Vision to Reality Styles */
+.vision-reality {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 100%);
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.vr-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vr-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vr-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff6b35, #ffd166);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vr-subtitle {
+  font-size: 1.2rem;
+  color: #a1a1b5;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vr-platform {
+  margin-bottom: 4rem;
+}
+
+.vr-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.vr-media {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.vr-microvideo {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.vr-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.vr-services h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffd166;
+}
+
+.vr-service-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.vr-service-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.vr-service-media {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.vr-service-text {
+  flex: 1;
+}
+
+.vr-service-text h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #ff6b35;
+}
+
+.vr-service-text p {
+  line-height: 1.7;
+  color: #d1d1e0;
+}
+
+.vr-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+}
+
+.vr-cta p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.vr-cta-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b35, #ffd166);
+  color: #1a1a2e;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vr-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255,107,53,0.3);
+}
+
+@media (max-width: 768px) {
+  .vr-header h2 {
+    font-size: 2rem;
+  }
+  
+  .vr-service-card, 
+  .vr-service-card.reverse {
+    flex-direction: column;
+  }
+  
+  .vr-media {
+    flex-direction: column;
+  }
+  
+  .vr-microvideo,
+  .vr-image {
+    max-width: 100%;
+  }
+}
+</style>
+<section class="event-highlight-bento">
+  <div class="event-bento-grid">
+    <!-- Event Info Block -->
+   
+</section>
+
+<style>
+.event-highlight-bento {
+  background: linear-gradient(135deg, #FFF8E8 75%, #FFD166 100%);
+  padding: 5rem 2rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-bento-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bento-block {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.bento-event-info {
+  align-items: flex-start;
+  text-align: left;
+  min-width: 0;
+}
+.event-emoji {
+  font-size: 2.6rem;
+  color: #FFD166;
+  margin-bottom: 0.8rem;
+}
+.event-title-main {
+  font-size: 2.1rem;
+  font-family: 'Bungee', cursive;
+  color: #FF6B35;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 0 #FFD166;
+}
+.event-subtitle {
+  font-size: 1.1rem;
+  color: #0096c7;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 1rem;
+}
+.event-features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #1A1A2E;
+}
+.event-features li {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.event-details {
+  display: flex;
+  gap: 1.2rem;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+}
+.event-details div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.event-tickets {
+  background: #FFF8E8;
+  border-radius: 10px;
+  padding: 0.7rem 0.5rem;
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  color: #FF6B35;
+  box-shadow: 0 2px 8px rgba(255,107,53,0.05);
+}
+.event-callout {
+  background: #FFD166;
+  color: #1A1A2E;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 0.8rem 0;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+}
+.event-hashtags {
+  font-size: 0.9rem;
+  color: #00A7E1;
+  margin-bottom: 0.8rem;
+  word-break: break-all;
+}
+.btn-event-tickets {
+  display: inline-block;
+  margin-top: 1.2rem;
+  background: linear-gradient(45deg, #FF6B35, #FFD166);
+  color: #1A1A2E;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 10px rgba(255,107,53,0.17);
+}
+.btn-event-tickets:hover {
+  transform: translateY(-2px);
+  background: #FFD166;
+  color: #FF6B35;
+}
+
+.bento-event-video {
+  justify-content: flex-start;
+}
+.micro-media-label {
+  font-weight: bold;
+  color: #00A7E1;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+.micro-video {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  margin-bottom: 0.2rem;
+}
+
+.bento-event-images {
+  justify-content: flex-start;
+}
+.micro-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  width: 100%;
+}
+.micro-img {
+  width: 100%;
+  max-width: 120px;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(255,107,53,0.08);
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  background: #FFF8E8;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .event-bento-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .micro-img {
+    max-width: 90px;
+  }
+}
+@media (max-width: 700px) {
+  .event-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-block {
+    min-height: 220px;
+    margin-bottom: 1rem;
+  }
+  .micro-image-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+<style>
+/* Vision to Reality Styles */
+.vision-reality {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 100%);
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.vr-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vr-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vr-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff6b35, #ffd166);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vr-subtitle {
+  font-size: 1.2rem;
+  color: #a1a1b5;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vr-platform {
+  margin-bottom: 4rem;
+}
+
+.vr-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.vr-media {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.vr-microvideo {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.vr-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.vr-services h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffd166;
+}
+
+.vr-service-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.vr-service-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.vr-service-media {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.vr-service-text {
+  flex: 1;
+}
+
+.vr-service-text h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #ff6b35;
+}
+
+.vr-service-text p {
+  line-height: 1.7;
+  color: #d1d1e0;
+}
+
+.vr-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+}
+
+.vr-cta p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.vr-cta-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b35, #ffd166);
+  color: #1a1a2e;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vr-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255,107,53,0.3);
+}
+
+@media (max-width: 768px) {
+  .vr-header h2 {
+    font-size: 2rem;
+  }
+  
+  .vr-service-card, 
+  .vr-service-card.reverse {
+    flex-direction: column;
+  }
+  
+  .vr-media {
+    flex-direction: column;
+  }
+  
+  .vr-microvideo,
+  .vr-image {
+    max-width: 100%;
+  }
+}
+</style>
+    
+   <!-- Redesigned About Section: Bento & Anti-Design Style -->
+<section class="about-bento-antidesign" id="about-bento">
+  <div class="bento-grid">
+    <!-- Left Bento Block: Statement Image or Abstract Art -->
+    <div class="bento-block image-block anti-border">
+      <img src="lc (1).jpg" alt="Abstract Entertainment Art" class="bento-img" />
+      <div class="abs-label">Get Your Tickets </div>
+    </div>
+    <!-- Middle Bento Block: Core Statement -->
+    <div class="bento-block text-block anti-bg pulse">
+      <h2>Next Level Entertainment</h2>
+      <p class="statement">
+        <span class="anti-highlight">Empower</span> your vision.<br>
+        <span class="anti-highlight">Curate</span> your vibe.<br>
+        <span class="anti-highlight">Connect</span> your tribe.<br>
+        <span class="anti-highlight">Sell</span> with zero stress.<br>
+      </p>
+      <div class="ticketing-badge anti-border">🎟️ Hassle-Free Ticketing</div>
+    </div>
+    <!-- Right Bento Block: Community & Ecosystem -->
+    <div class="bento-block community-block anti-border">
+      <div class="community-icon">👾</div>
+      <h3>Not Just A Marketplace</h3>
+      <p>
+        PrymeKonet is a <span class="anti-highlight">community experiment</span>.<br>
+        Host. Share. Influence. <br>
+        Build your legacy in a world that refuses to be boring.
+      </p>
+      <div class="ecosystem-badge anti-bg">Ecosystem Builder</div>
+    </div>
+  </div>
+</section>
+ <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
+            <source src="gg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay">
+           
+           
+        </div>
+    </section>
+<style>
+/* Bento + Anti-Design Style for About Section */
+.about-bento-antidesign {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #FFF8E8 70%, #FFD166 100%);
+  min-height: 60vh;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bento-block {
+  position: relative;
+  min-height: 350px;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Anti-design touches */
+.anti-border {
+  border: 3px dashed #00A7E1;
+  background: repeating-linear-gradient(40deg, #FFD166 0 10px, #FFF8E8 10px 20px);
+  box-shadow: 0 0 0 6px #FF6B35 inset;
+}
+.anti-bg {
+  background: #1A1A2E;
+  color: #FFD166;
+  border: 2px solid #FFD166;
+  box-shadow: 0 0 0 6px #FFD166 inset;
+}
+.anti-highlight {
+  background: #FF6B35;
+  color: #FFF8E8;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+.image-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: #FFF8E8;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.bento-img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 24px rgba(255,107,53,0.15);
+}
+
+.abs-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 1.1rem;
+  background: #FFD166;
+  color: #1A1A2E;
+  padding: 0.3em 0.8em;
+  border-radius: 12px;
+  font-family: 'Bungee', cursive;
+  z-index: 2;
+  letter-spacing: 0.08em;
+}
+
+.text-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  font-family: 'Quicksand', sans-serif;
+  animation: pulse 3s infinite;
+}
+
+.text-block h2 {
+  font-family: 'Bungee', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #FFD166;
+  text-shadow: 2px 2px 0 #1A1A2E;
+}
+
+.statement {
+  font-size: 1.2rem;
+  line-height: 2;
+  margin-bottom: 1.2rem;
+}
+
+.ticketing-badge {
+  margin-top: 1.5rem;
+  background: #FF6B35;
+  color: #FFF8E8;
+  padding: 0.5em 1.2em;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.community-block {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 350px;
+  background: #FFF8E8;
+}
+
+.community-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.community-block h3 {
+  font-family: 'Bungee', cursive;
+  color: #00A7E1;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.community-block p {
+  font-size: 1.1rem;
+  color: #1A1A2E;
+}
+
+.ecosystem-badge {
+  margin-top: 1.2rem;
+  background: #00A7E1;
+  color: #FFF8E8;
+  padding: 0.4em 1em;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bento-block {
+    min-height: 280px;
+  }
+  .bento-img {
+    max-width: 180px;
+  }
+}
+
+
+</style> 
+     <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">How PrymeKonet Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number" aria-hidden="true">1</div>
+                <h3>Discover or Create</h3>
+                <p>Find amazing parties or create your own event</p>
+            </div>
+            <div class="step">
+                <div class="step-number" aria-hidden="true">2</div>
+                <h3>Connect & Promote</h3>
+                <p>Build your audience and spread the word</p>
+            </div>
+            <div class="step">
+                <div class="step-number" aria-hidden="true">3</div>
+                <h3>Party & Repeat</h3>
+                <p>Enjoy unforgettable nights and do it again</p>
+            </div>
+        </div>
+    </section>
+    <!-- Design Services Section: Professional & Detailed -->
+<section class="design-services" id="design-services">
+  <div class="services-header">
+    <h2>Comprehensive Design Services for Memorable Events</h2>
+    <p class="services-subtitle">From concept to execution, we create visual identities that make your event stand out</p>
+    <div class="services-cta">
+      <a href="tel:09040016946" class="cta-button">Call Now: 09040016946</a>
+    </div>
+  </div>
+
+  <div class="services-grid">
+    <!-- Service Card 1 -->
+    <div class="service-card">
+      <div class="service-icon">🖼️</div>
+      <h3>Logo Design</h3>
+      <div class="service-details">
+        <p>Custom logo creation that captures your event's essence. We develop unique, scalable logos that work across all media, from digital platforms to large-scale prints.</p>
+        <ul class="service-features">
+          <li>Multiple concept options</li>
+          <li>Vector file formats</li>
+          <li>Brand guidelines</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="service-card">
+      <div class="service-icon">🎉</div>
+      <h3>Banner Design</h3>
+      <div class="service-details">
+        <p>Eye-catching banners for both indoor and outdoor events. We design for visibility and impact, considering viewing distances and installation requirements.</p>
+        <ul class="service-features">
+          <li>Print-ready files</li>
+          <li>Multiple size options</li>
+          <li>High-resolution output</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 3 -->
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Event Branding</h3>
+      <div class="service-details">
+        <p>Complete visual identity packages for your event, including color schemes, typography, and design elements that create a cohesive experience across all touchpoints.</p>
+        <ul class="service-features">
+          <li>Theme development</li>
+          <li>Style guide creation</li>
+          <li>Application across materials</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 4 -->
+    <div class="service-card">
+      <div class="service-icon">🦋</div>
+      <h3>Flyer Design</h3>
+      <div class="service-details">
+        <p>Effective promotional flyers that communicate your event details clearly while capturing attention. We optimize for both print distribution and digital sharing.</p>
+        <ul class="service-features">
+          <li>Multiple layout options</li>
+          <li>QR code integration</li>
+          <li>Print specifications</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 5 -->
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3>Web Design</h3>
+      <div class="service-details">
+        <p>Responsive event websites that provide information and drive ticket sales. Our designs focus on user experience, mobile optimization, and conversion.</p>
+        <ul class="service-features">
+          <li>Mobile-first approach</li>
+          <li>SEO optimization</li>
+          <li>Integration with ticketing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 6 -->
+    <div class="service-card">
+      <div class="service-icon">💼</div>
+      <h3>Business Card</h3>
+      <div class="service-details">
+        <p>Professional business cards that make lasting impressions. We balance creative design with practical information display for networking success.</p>
+        <ul class="service-features">
+          <li>Premium finishes available</li>
+          <li>Double-sided designs</li>
+          <li>Contact information optimization</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 7 -->
+    <div class="service-card">
+      <div class="service-icon">🎞️</div>
+      <h3>Motion Graphics</h3>
+      <div class="service-details">
+        <p>Animated visuals for event screens, social media, and presentations. We create engaging motion content that enhances your event's digital presence.</p>
+        <ul class="service-features">
+          <li>Social media animations</li>
+          <li>Event screen loops</li>
+          <li>Presentation enhancements</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 8 -->
+    <div class="service-card">
+      <div class="service-icon">📺</div>
+      <h3>Advert Design</h3>
+      <div class="service-details">
+        <p>Effective advertising materials tailored to your target platforms, whether print publications, digital ads, or outdoor displays.</p>
+        <ul class="service-features">
+          <li>Platform-specific sizing</li>
+          <li>CTA optimization</li>
+          <li>A/B testing options</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service Card 9 -->
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Visual Design</h3>
+      <div class="service-details">
+        <p>Comprehensive visual solutions including stage designs, environmental graphics, and wayfinding systems that enhance the attendee experience.</p>
+        <ul class="service-features">
+          <li>3D renderings available</li>
+          <li>Material specifications</li>
+          <li>Installation guidance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="services-footer">
+    <p>Ready to elevate your event's visual identity? Contact us today for a consultation.</p>
+    <a href="tel:09040016946" class="cta-button secondary">Call Now: 09040016946</a>
+  </div>
+</section>
+
+<style>
+/* Professional Design Services Styles */
+.design-services {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.services-header h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-details p {
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #7f8c8d;
+}
+
+.service-features li:before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+}
+
+.cta-button.secondary {
+  background: #2c3e50;
+}
+
+.cta-button.secondary:hover {
+  background: #1a252f;
+}
+
+.services-footer {
+  text-align: center;
+  margin-top: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-footer p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-header h2 {
+    font-size: 1.8rem;
+  }
+}
+</style>
+
+
+
+  
+
+   
+
+   
+
+    <!-- Footer -->
+    <footer class="summer-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Pryme<span>Konet</span></a>
+                <p>Next Level Entertainment</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/prymekonet/" aria-label="Instagram"><span aria-hidden="true">📸</span></a>
+                 
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Explore</h4>
+                    <a href="events.html">Popular Events</a>
+                    <a href="events.html">Featured Venues</a>
+                    <a href="tickets.html">Trending Now</a>
+                </div>
+                <div class="link-column">
+                    <h4>Host</h4>
+                    <a href="host.html">Create Event</a>
+                    <a href="host.html">Pricing</a>
+                    <a href="host.html">Resources</a>
+                </div>
+                <div class="link-column">
+                  
+                    <a href="about.html">About</a>
+                    <a href="about.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> PrymeKonet. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Load critical JS inline -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            navLinks.style.display = isExpanded ? 'none' : 'flex';
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+        
+        // Lazy load non-critical JS
+        function loadJS(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script);
+            });
+        }
+        
+        // Load non-critical JS after page load
+        window.addEventListener('load', function() {
+            loadJS('js/main.min.js');
+            loadJS('js/events.min.js');
+        });
+    </script>
+</body>
+</html>
+
+
+<style> 
+
+    /* Base Styles */
+:root {
+    --orange: #FF6B35;
+    --teal: #00A7E1;
+    --yellow: #FFD166;
+    --white: #F7FFF7;
+    --navy: #1A1A2E;
+    --cream: #FFF8E8;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cream);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Bungee', cursive;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: var(--orange);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--teal);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--orange);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn-summer, .btn-teal, .btn-orange, .btn-yellow {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-teal {
+    background-color: var(--teal);
+    color: white;
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: white;
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--navy);
+}
+
+.btn-summer {
+    background: linear-gradient(45deg, var(--orange), var(--yellow));
+    color: white;
+}
+
+/* Navigation */
+.summer-nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 2rem;
+    background-color: rgba(26, 26, 46, 0.5);
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-title span {
+    color: var(--yellow);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Value Proposition */
+.value-prop {
+    padding: 5rem 2rem;
+    background-color: white;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Featured Events */
+.featured-events {
+    padding: 5rem 2rem;
+    background-color: var(--cream);
+}
+
+.event-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    background-color: white;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+.events-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.03);
+}
+
+.event-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.event-info {
+    padding: 1.5rem;
+}
+
+.event-title {
+    font-family: 'Bungee', cursive;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    color: var(--teal);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    margin-bottom: 1rem;
+}
+
+.event-cta {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--teal);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 5rem 2rem;
+    background-color: white;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--yellow);
+    color: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bungee', cursive;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+}
+
+/* Community CTA */
+.community-cta {
+    background: linear-gradient(45deg, var(--orange), var(--teal));
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+.summer-footer {
+    background-color: var(--navy);
+    color: white;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.footer-brand {
+    margin-bottom: 2rem;
+}
+
+.footer-brand p {
+    margin: 0.5rem 0 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-column h4 {
+    color: var(--yellow);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.link-column a {
+    display: block;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-column a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Wave animation for buttons */
+.btn-teal:hover, .btn-orange:hover, .btn-yellow:hover {
+    animation: wave 0.5s ease;
+}
+
+@keyframes wave {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Floating animation for value cards */
+.value-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Each card floats at different times */
+.value-card:nth-child(1) { animation-delay: 0s; }
+.value-card:nth-child(2) { animation-delay: 0.5s; }
+.value-card:nth-child(3) { animation-delay: 1s; }
+.value-card:nth-child(4) { animation-delay: 1.5s; }
+
+</style>
+
+<style> 
+<style>
+/* Animation Classes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flipInX {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateX(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0);
+    }
+}
+
+@keyframes flipInY {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateY(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Animation Classes */
+.animate {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.fade-in { animation-name: fadeIn; }
+.fade-in-up { animation-name: fadeInUp; }
+.fade-in-down { animation-name: fadeInDown; }
+.fade-in-left { animation-name: fadeInLeft; }
+.fade-in-right { animation-name: fadeInRight; }
+.zoom-in { animation-name: zoomIn; }
+.flip-in-x { animation-name: flipInX; }
+.flip-in-y { animation-name: flipInY; }
+.bounce-in { animation-name: bounceIn; }
+
+/* Delay Classes */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+/* Scroll Animation Trigger */
+.scroll-trigger {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-trigger.visible {
+    opacity: 1;
+    transform: none !important;
+}
+
+.fade-up { transform: translateY(40px); }
+.fade-down { transform: translateY(-40px); }
+.fade-left { transform: translateX(-40px); }
+.fade-right { transform: translateX(40px); }
+</style>
+
+
+
+<script>
+
+<script>
+// Intersection Observer for scroll animations
+function initScrollAnimations() {
+    const scrollTriggers = document.querySelectorAll('.scroll-trigger');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    scrollTriggers.forEach(trigger => {
+        observer.observe(trigger);
+    });
+}
+
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Hero section animations
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroButtons = document.querySelector('.hero-buttons');
+    
+    if (heroTitle) {
+        heroTitle.classList.add('animate', 'fade-in-down');
+    }
+    if (heroSubtitle) {
+        heroSubtitle.classList.add('animate', 'fade-in-up', 'delay-1');
+    }
+    if (heroButtons) {
+        heroButtons.classList.add('animate', 'fade-in', 'delay-2');
+    }
+    
+    // Bento grid animations
+    const bentoBlocks = document.querySelectorAll('.bento-block');
+    bentoBlocks.forEach((block, index) => {
+        block.classList.add('animate');
+        if (index % 2 === 0) {
+            block.classList.add('fade-in-left', `delay-${index + 1}`);
+        } else {
+            block.classList.add('fade-in-right', `delay-${index + 1}`);
+        }
+    });
+    
+    // How it works steps animations
+    const steps = document.querySelectorAll('.step');
+    steps.forEach((step, index) => {
+        step.classList.add('animate', 'bounce-in', `delay-${index + 1}`);
+    });
+    
+    // Service cards animations
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        card.classList.add('animate', 'flip-in-y', `delay-${index % 3}`);
+    });
+    
+    // VR service cards animations
+    const vrCards = document.querySelectorAll('.vr-service-card');
+    vrCards.forEach((card, index) => {
+        card.classList.add('scroll-trigger', 'fade-up');
+    });
+});
+</script>
+
