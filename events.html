@@ -450,7 +450,28 @@
 }
 
 </style>
+    <style> 
+  .bento-box.info-box.genre-focus {
+    /* Set a defined size for the container */
+    width: 300px; /* Example width */
+    height: 200px; /* Example height */
+    /* Add any other styling like border, background, etc. */
+    border: 1px solid #ccc; 
+    overflow: hidden; /* Crucial for controlling the visual space */
+}
+
+.bento-box.info-box.genre-focus img {
+    /* Make the image take up 100% of the container space */
+    width: 100%;
+    height: 100%;
     
+    /* This is the key property */
+    object-fit: contain; 
+    
+    /* Center the image within the container if it doesn't fill it entirely */
+    object-position: center; 
+}
+</style>
 </section>
    
     <!-- Design Services Section: Professional & Detailed -->
@@ -589,7 +610,119 @@
   }
 }
 </style>
+<section class="artist-announcement-hero">
+    <div class="announcement-container">
+        
+        
+        
+    
+        
+        <div class="announcement-content">
+            <p class="hero-lead-paragraph">
+                PrymeKonet Production is excited to officially announce the signing of its newest talent, Banke Bankz, a vibrant and fast-rising Afro-Amapiano artist whose sound is already earning attention across Nigeria’s evolving music scene.
+            </p>
+            
+            <p>
+                Recognized for his energetic delivery, fresh musical perspective, and youth-driven influence, Banke Bankz represents the next phase of PrymeKonet’s mission to discover, develop, and elevate exceptional talent shaping the future of African sound.
+            </p>
+            
+            <h2 class="sub-headline">
+                Debut Single & Exclusive Premiere
+            </h2>
+            
+            <p>
+                Banke Bankz will be making his debut under PrymeKonet with a highly anticipated new single, dropping on the **25th of this month**. The track blends amapiano bounce with his signature storytelling, a style that has already begun resonating with early listeners.
+            </p>
+            
+            <p>
+                As part of the rollout, PrymeKonet Production will premiere the single live at **The Grove Party** — the brand’s weekly lifestyle experience held every Tuesday. The Grove Party has quickly become a cultural hub for creatives, party lovers, and music enthusiasts, making it the perfect launchpad for Banke Bankz’s new era.
+            </p>
+            
+            <h3 class="event-details-headline">
+                The Premiere Night will Feature:
+            </h3>
+            <ul class="event-features-list">
+                <li>A first-time live listening of the single</li>
+                <li>Exclusive performances</li>
+                <li>Artist reveal moments</li>
+                <li>Visual teasers and fan engagement sessions</li>
+            </ul>
+            
+            <p>
+                PrymeKonet Production remains committed to pushing boundaries, creating opportunities, and championing the next generation of stars. Banke Bankz’s addition to the roster reinforces this vision and signals an exciting new chapter for the brand.
+            </p>
+            
+            <p>
+                More updates about the single release and launch activities will be shared across PrymeKonet’s social platforms.
+            </p>
+            
+            <p class="final-message">
+                **Welcome to the PrymeKonet family, Banke Bankz.**
+                <br>
+                A new sound is coming — and the wave starts now.
+            </p>
+            
+        </div>
+        
+    </div>
+</section>
+<style> /* --- Root Variables for Consistency (Optional but Recommended) --- */
+:root {
+    --color-primary: #FF5733; /* A vibrant orange/red for accents */
+    --color-secondary: #00A86B; /* A complementary green for highlights */
+    --color-background: #121212; /* Dark background */
+    --color-text: #EAEAEA; /* Light text for readability */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --spacing-unit: 1rem;
+}
 
+/* --- Base Section Styling --- */
+.artist-announcement-hero {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 6rem 1rem; /* Generous vertical padding for a hero feel */
+    font-family: var(--font-body);
+    position: relative;
+    overflow: hidden; /* Contains any potential absolute elements */
+    /* Add a subtle dark background image/pattern if desired */
+    /* background-image: url('path/to/texture.png'); */
+}
+
+/* --- Container for Max Width and Centering --- */
+.announcement-container {
+    max-width: 1100px; /* Max width for content readability */
+    margin: 0 auto; /* Center the container */
+    position: relative;
+    z-index: 10; /* Ensures content is above any background effects */
+}
+
+/* --- Content Wrapper Styling --- */
+.announcement-content {
+    /* For a nice layout, we can limit the width of the text block within the container */
+    max-width: 750px;
+    margin: 0 auto; /* Center the content block */
+    line-height: 1.8; /* Increased line height for better readability */
+}
+
+/* --- Typography: Headings --- */
+.sub-headline,
+.event-details-headline {
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.sub-headline {
+    font-size: 2.5rem; /* Large and impactful */
+    border-left: 5px solid var(--color-primary); /* Accent line */
+    padding-left: 1rem;
+}
+
+.event-details-headline {
+    font-size: 1.75rem; /* Smaller than sub-headline */</style>
 
 
 
