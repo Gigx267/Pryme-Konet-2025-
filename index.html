@@ -522,7 +522,28 @@ document.querySelectorAll('.nav-link').forEach(link => {
         <div class="bento-box info-box genre-focus">
            <img src="fp (1).jpeg" alt="PrymeKonet Production official logo" style="height: 900%; width: auto;">
         </div>
+<style> 
+  .bento-box.info-box.genre-focus {
+    /* Set a defined size for the container */
+    width: 300px; /* Example width */
+    height: 200px; /* Example height */
+    /* Add any other styling like border, background, etc. */
+    border: 1px solid #ccc; 
+    overflow: hidden; /* Crucial for controlling the visual space */
+}
 
+.bento-box.info-box.genre-focus img {
+    /* Make the image take up 100% of the container space */
+    width: 100%;
+    height: 100%;
+    
+    /* This is the key property */
+    object-fit: contain; 
+    
+    /* Center the image within the container if it doesn't fill it entirely */
+    object-position: center; 
+}
+</style>
         <div class="bento-box info-box label-mission">
             <div class="image-placeholder logo-placeholder">
                 <img src="Logo.png" alt="PrymeKonet Production official logo" style="height: 100%; width: auto;">
