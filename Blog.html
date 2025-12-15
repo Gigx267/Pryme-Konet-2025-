@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond the Party: Strategic Campaign Success | PrymeKonet Blog</title>
+    <meta name="description" content="Case study: How PrymeKonet transformed Dreams Cottage Estate's 2025 Festive Season Land Promo into a viral cultural phenomenon covered by Abuja Press, Nairaland, and TV Africa 24.">
+    <meta name="keywords" content="PrymeKonet, real estate marketing, Abuja, campaign strategy, event marketing, Dreams Cottage Estate">
+    <meta property="og:title" content="Beyond the Party: Strategic Campaign Success">
+    <meta property="og:description" content="How PrymeKonet engineered a viral real estate campaign">
+    <meta property="og:type" content="article">
     <link rel="icon" type="image/png" sizes="16x16" href="Logo.png">
+    
+    <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" as="style">
+    
+    <!-- Inline critical CSS -->
     <style>
-        /* PrymeKonet Brand Colors */
+        /* Critical CSS - Above the fold */
         :root {
             --orange: #FF6B35;
             --teal: #00A7E1;
@@ -18,8 +27,6 @@
             --navy: #1A1A2E;
             --cream: #FFF8E8;
             --dark-blue: #0A0A14;
-            --gray: #6c757d;
-            --light-gray: #f8f9fa;
         }
 
         * {
@@ -29,11 +36,14 @@
         }
 
         body {
-            font-family: 'Quicksand', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
             color: var(--navy);
             background-color: var(--cream);
             padding-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .container {
@@ -42,13 +52,13 @@
             padding: 0 20px;
         }
 
-        /* Navigation */
+        /* Navigation - Critical */
         .pryme-nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(26, 26, 46, 0.95);
+            background: rgba(26, 26, 46, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.2);
@@ -71,17 +81,55 @@
             flex-direction: column;
         }
 
-        .nav-logo span {
-            color: var(--teal);
-            font-family: 'Bungee', cursive;
+        /* Ensure content is visible quickly */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
+            padding: 80px 0 60px;
+            margin-bottom: 50px;
+            color: white;
         }
 
+        /* Loading optimization */
+        .article-image {
+            background: linear-gradient(45deg, var(--teal), var(--navy));
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
+        /* Font loading optimization */
+        .fonts-loaded body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        .fonts-loaded .nav-logo {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .fonts-loaded .blog-hero h1,
+        .fonts-loaded h2,
+        .fonts-loaded h3 {
+            font-family: 'Bungee', cursive;
+        }
+    </style>
+    
+    <!-- Load non-critical fonts asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; document.documentElement.classList.add('fonts-loaded')">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Deferred CSS -->
+    <style>
+        /* Non-critical CSS */
         .logo-sub {
             font-size: 0.6rem;
-            font-family: 'Quicksand', sans-serif;
             color: var(--yellow);
             margin-top: -5px;
             letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--teal);
         }
 
         .nav-links {
@@ -133,16 +181,7 @@
             box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
         }
 
-        /* Blog Header */
-        .blog-hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
-            padding: 80px 0 60px;
-            margin-bottom: 50px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
+        /* Blog Hero */
         .blog-hero::before {
             content: '';
             position: absolute;
@@ -177,8 +216,7 @@
         }
 
         .blog-hero h1 {
-            font-family: 'Bungee', cursive;
-            font-size: 3.2rem;
+            font-size: clamp(2rem, 5vw, 3.2rem);
             line-height: 1.1;
             margin-bottom: 25px;
             text-transform: uppercase;
@@ -186,7 +224,7 @@
         }
 
         .blog-hero-subtitle {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto 30px;
@@ -202,24 +240,6 @@
             font-size: 0.95rem;
         }
 
-        .author-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .author-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--orange), var(--yellow));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--navy);
-        }
-
         /* Blog Content */
         .blog-content {
             display: grid;
@@ -231,6 +251,7 @@
         @media (max-width: 992px) {
             .blog-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
 
@@ -241,19 +262,27 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 768px) {
+            .article-main {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-main {
+                padding: 20px;
+            }
+        }
+
         .article-image {
-            width: 100%;
-            height: 400px;
             border-radius: 15px;
-            background: linear-gradient(45deg, var(--teal), var(--navy));
             margin-bottom: 40px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-family: 'Bungee', cursive;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             text-align: center;
             padding: 20px;
         }
@@ -267,17 +296,15 @@
         }
 
         .article-body h2 {
-            font-family: 'Bungee', cursive;
             color: var(--orange);
             margin: 40px 0 20px;
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
         }
 
         .article-body h3 {
-            font-family: 'Bungee', cursive;
             color: var(--teal);
             margin: 30px 0 15px;
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
         }
 
         .highlight-box {
@@ -322,8 +349,7 @@
         }
 
         .result-number {
-            font-family: 'Bungee', cursive;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             color: var(--orange);
             margin-bottom: 10px;
         }
@@ -331,6 +357,33 @@
         .result-label {
             color: var(--navy);
             font-weight: 600;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .data-table th {
+            background: var(--teal);
+            color: white;
+            font-weight: 600;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
         }
 
         /* Sidebar */
@@ -349,62 +402,11 @@
         }
 
         .sidebar-title {
-            font-family: 'Bungee', cursive;
             color: var(--navy);
             margin-bottom: 20px;
             font-size: 1.3rem;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--yellow);
-        }
-
-        .related-articles {
-            list-style: none;
-        }
-
-        .related-articles li {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .related-articles li:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .related-articles a {
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            display: block;
-        }
-
-        .related-articles a:hover {
-            color: var(--orange);
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background: rgba(255, 107, 53, 0.1);
-            color: var(--orange);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .tag:hover {
-            background: var(--orange);
-            color: white;
         }
 
         .cta-box {
@@ -430,7 +432,6 @@
             margin-top: 15px;
             border: none;
             cursor: pointer;
-            font-family: 'Quicksand', sans-serif;
             font-size: 1rem;
         }
 
@@ -483,6 +484,7 @@
             color: white;
             padding: 50px 0 30px;
             text-align: center;
+            margin-top: auto;
         }
 
         .footer-logo {
@@ -495,7 +497,6 @@
 
         .footer-logo span {
             color: var(--teal);
-            font-family: 'Bungee', cursive;
         }
 
         .blog-footer p {
@@ -570,19 +571,6 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .blog-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .article-main {
-                padding: 30px;
-            }
-            
-            .article-image {
-                height: 300px;
-                font-size: 2rem;
-            }
-            
             .nav-links {
                 display: none;
                 position: absolute;
@@ -619,45 +607,66 @@
         }
 
         @media (max-width: 576px) {
-            .blog-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .blog-hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .article-main {
-                padding: 20px;
-            }
-            
-            .article-image {
-                height: 200px;
-                font-size: 1.5rem;
-            }
-            
             .nav-container {
                 padding: 1rem;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .pryme-nav,
+            .blog-sidebar,
+            .share-section,
+            .blog-footer {
+                display: none;
+            }
+            
+            body {
+                padding-top: 0;
+                background: white;
+                color: black;
+            }
+            
+            .blog-hero {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .blog-hero h1 {
+                color: black !important;
+            }
+            
+            .container {
+                max-width: none;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="pryme-nav">
+    <nav class="pryme-nav" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="index.html" class="nav-logo" aria-label="PrymeKonet Home">
                 Pryme<span>Konet</span>
                 <span class="logo-sub">Nigeria's Party & Events Hub</span>
             </a>
             
-            <div class="nav-links">
+            <div class="nav-links" id="main-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="events.html" class="nav-link">Events</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="Grove.html" class="nav-link">The Grove</a>
-                <a href="Blog.html" class="nav-link active">Blog</a>
+                <a href="Blog.html" class="nav-link active" aria-current="page">Blog</a>
                 <a href="host.html" class="nav-link">Host With Us</a>
                 <a href="contact.html" class="nav-link">Contact us</a>
             </div>
@@ -666,7 +675,7 @@
                 <a href="https://24events.ng/events/light/" class="btn-signup">Get Tickets</a>
             </div>
             
-            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+            <button class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
                 <span class="menu-icon"></span>
             </button>
         </div>
@@ -674,168 +683,112 @@
 
     <!-- Blog Hero -->
     <header class="blog-hero">
-        <div class="container">
-            <div class="blog-hero-content">
-                <div class="blog-category">Case Study</div>
-                <h1>Beyond the Party: How PrymeKonet Engineered a Viral Real Estate Campaign</h1>
-                <p class="blog-hero-subtitle">Transforming a festive season land promo into a cultural moment that captured national attention across major media outlets</p>
-                
-                <div class="blog-meta">
-                    <div class="author-info">
-                        <div class="author-avatar">PK</div>
-                        <div>
-                            <div><strong>PrymeKonet Strategy Team</strong></div>
-                            <div>December 15, 2025 • 8 min read</div>
-                        </div>
-                    </div>
-                    <div class="read-time">📖 8 min read</div>
+        <div class="blog-hero-content">
+            <span class="blog-category">Case Study</span>
+            <h1>Transforming Dreams Cottage Estate's 2025 Festive Season Land Promo into a Cultural Phenomenon </h1>
+            <p class="blog-hero-subtitle"></p>
+            <div class="blog-meta">
+                <div class="author-info">
+                    <span>Published: December 2025</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
         <div class="blog-content">
-            <!-- Article Content -->
             <article class="article-main">
-                <div class="article-image">
-                    STRATEGY MEETS EXECUTION<br>Turning Real Estate Into Entertainment
+                <div class="article-image" role="img" aria-label="Campaign visualization">
+                    Dream → Reality: Abuja Land Promo Success
                 </div>
                 
                 <div class="article-body">
-                    <p>At PrymeKonet, we operate on a fundamental principle: <strong>every major announcement deserves an event, and every event should create cultural momentum.</strong> While we're best known for concerts and club nights, our expertise extends to creating launch platforms for diverse industries. This case study explores how we partnered with Dreams Cottage Estate to transform their 2025 Festive Season Land Promo from a standard real estate offer into a viral campaign covered by Abuja Press, Nairaland, Opera News, State Press, and TV Africa 24.</p>
-                    
+                    <p>At PrymeKonet, we operate on a fundamental principle: <strong>every major announcement deserves an event, and every event should create cultural momentum.</strong> While we are known for entertainment, our expertise lies in creating launch platforms. This case study explores how we partnered with <strong>Dreams Cottage Estate Ltd</strong> to transform their 2025 Festive Season Land Promo from a standard real estate offer into a viral campaign covered by Abuja Press, Nairaland, Opera News, and TV Africa 24.</p>
+
                     <div class="highlight-box">
-                        <p><strong>The Challenge:</strong> How to make a residential land discount in Abuja feel like an exclusive, unmissable event that breaks through traditional real estate marketing noise.</p>
+                        <p><strong>The Challenge:</strong> How do you make a residential land discount in the FCT feel like an unmissable cultural event rather than just another sales pitch?</p>
                     </div>
+
+                    <h2>The Strategy: Redefining "Investment" as a "Festive Gift"</h2>
+                    <p>Dreams Cottage Estate approached us with a clear mission: bridge the housing gap by offering premium FCDA-approved plots at accessible prices. Under the leadership of <strong>CEO Mr. Obumneme Joseph Obi</strong>, the firm wanted to position this promo as a "festive gift" to aspiring homeowners.</p>
                     
-                    <h2>The Strategy: Redefining "Investment" as "Experience"</h2>
-                    
-                    <p>Dreams Cottage Estate approached us with prime plots and a competitive festive discount. Our first insight was that price alone wouldn't create the desired impact. We needed to shift the narrative from <em>"buy land at a discount"</em> to <em>"secure your family's future as the ultimate festive celebration."</em></p>
-                    
-                    <p>We developed a three-phase "Festive Acquisition Experience" framework:</p>
-                    
+                    <p>We pivoted the narrative. We weren't just selling 250SQM or 500SQM plots; we were selling the "peace of mind" that comes with legal compliance and the prestige of prime Abuja corridors.</p>
+
+                    <h2>The Execution: Showcasing the Portfolio</h2>
+                    <p>To create urgency, we highlighted the sheer variety and strategic positioning of the Dreams Cottage portfolio. We categorized the offerings to appeal to different investor tiers:</p>
+
                     <ul class="strategy-list">
-                        <li><strong>Exclusive Preview Mixer:</strong> An invite-only evening for VIPs, past clients, and influencers, creating early buzz and social proof.</li>
-                        <li><strong>Public Launch Celebration:</strong> A high-energy event with music, entertainment, and immersive site visualizations, generating social media content and direct engagement.</li>
-                        <li><strong>Strategic Media Rollout:</strong> Coordinated storytelling across different media platforms, each with a tailored angle—financial for business outlets, lifestyle for general media.</li>
+                        <li><strong>Entry-Level Luxury:</strong> Plots starting from <strong>N2.5 million</strong>.</li>
+                        <li><strong>The Prime Selection:</strong> Locations like <em>Addis City (Kabusa)</em>, <em>Skyline Estate (Idu)</em>, and <em>Solaris Court (Life Camp)</em>.</li>
+                        <li><strong>Turnkey Solutions:</strong> Highlighting the fully built 4-bedroom terraces at <em>Kaima Estate</em> near Dunamis Headquarters.</li>
                     </ul>
-                    
-                    <h2>The Execution: Creating Multiple Entry Points</h2>
-                    
-                    <p>Understanding that different audiences consume content differently, we crafted unique narratives for each platform:</p>
-                    
-                    <p><strong>For Abuja Press & State Press:</strong> We positioned the story as a "market-moving holiday offer" with expert commentary on Abuja's real estate trends, establishing credibility.</p>
-                    
-                    <p><strong>For Nairaland:</strong> We engaged the community with a thread discussing "The Best Festive Investments for Nigerian Families," seeding organic conversation that led to the promo.</p>
-                    
-                    <p><strong>For TV Africa 24:</strong> We provided visual assets and arranged interviews, turning the promo into a visual story about "gifting land" during the holidays.</p>
-                    
-                    <p><strong>For Opera News:</strong> We focused on the aspirational lifestyle angle—owning a piece of Abuja's future.</p>
-                    
-                    <h2>The Results: When Demand Forces Extension</h2>
-                    
-                    <p>The campaign generated unprecedented interest. Within two weeks, Dreams Cottage Estate faced a challenge every brand desires: <strong>overwhelming demand</strong>. Initial inquiries surpassed projections by 300%.</p>
-                    
+
+                    <p>We utilized a multi-platform storytelling approach. For <strong>Abuja Press</strong>, we focused on the FCDA approval and investment security. For social platforms, we emphasized the lifestyle of living near the <em>Hutu Abuja Polo Golf Resort</em> or <em>Centenary City</em>.</p>
+
+                    <h2>The Results: Demand That Broke the Calendar</h2>
+                    <p>The campaign's focus on <strong>Value, Respect, and Integrity</strong>—the pillars of Mr. Obi's leadership—resonated deeply. The initial 72-hour buzz turned into a sustained movement.</p>
+
                     <div class="results-grid">
                         <div class="result-card">
                             <div class="result-number">300%</div>
                             <div class="result-label">Above Inquiry Target</div>
                         </div>
                         <div class="result-card">
-                            <div class="result-card">
-                                <div class="result-number">5</div>
-                                <div class="result-label">Major Media Features</div>
-                            </div>
+                            <div class="result-number">N2.5M</div>
+                            <div class="result-label">Starting Entry Point</div>
                         </div>
                         <div class="result-card">
-                            <div class="result-number">31st Dec</div>
+                            <div class="result-number">Dec 31</div>
                             <div class="result-label">Extended Deadline</div>
                         </div>
                         <div class="result-card">
-                            <div class="result-number">72hrs</div>
-                            <div class="result-label">Initial Sales Window</div>
+                            <div class="result-number">6+</div>
+                            <div class="result-label">Prime FCT Locations</div>
                         </div>
                     </div>
-                    
-                    <p>This demand led to a strategic decision that became the campaign's masterstroke: <strong>extending the promo deadline to December 31st, 2025.</strong> We framed this not as a simple extension, but as a "victory for public demand"—a chance for more families to participate in an opportunity that was clearly resonating.</p>
-                    
-                    <h2>The PrymeKonet Difference: Cultural Strategy</h2>
-                    
-                    <p>What separates this from a typical PR campaign is our <strong>cultural approach</strong>. We didn't just announce a land discount; we created a cultural moment around land ownership. We tapped into:</p>
-                    
-                    <ul class="strategy-list">
-                        <li><strong>Festive generosity:</strong> Positioning land as the ultimate gift</li>
-                        <li><strong>Family legacy:</strong> Appealing to intergenerational planning</li>
-                        <li><strong>Smart celebration:</strong> Combining festivity with wise investment</li>
-                        <li><strong>Exclusive access:</strong> Creating VIP experiences around a mass-market offer</li>
-                    </ul>
-                    
+
+                    <h3>Available Plot Sizes Featured in the Campaign:</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Proposed Structure</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>150 SQM</td><td>3 Bedroom Terrace Duplex</td></tr>
+                            <tr><td>250 SQM</td><td>4 Bedroom Semi-Detached Duplex</td></tr>
+                            <tr><td>350 SQM</td><td>4 Bedroom Fully Detached Duplex</td></tr>
+                            <tr><td>500 SQM</td><td>5 Bedroom Fully Detached Duplex</td></tr>
+                            <tr><td>750 SQM</td><td>3 Bedroom 6-Unit Block of Flats</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>The PrymeKonet Difference: Real Estate as Experience</h2>
+                    <p>By the time we reached mid-December, the demand was so high that Dreams Cottage Estate strategically extended the promo to <strong>December 31st, 2025</strong>. We framed this extension as a "Victory for the People," allowing more families to secure their future before the new year.</p>
+
                     <div class="highlight-box">
-                        <p><strong>Key Insight:</strong> In today's market, people don't just buy products—they buy into stories, experiences, and communities. By wrapping a real estate transaction in compelling narrative and exclusive experiences, we multiplied its perceived value and reach.</p>
+                        <p><strong>Key Insight:</strong> People don't just buy land; they buy a path to a "decent and comfortable home." By emphasizing the <strong>flexible payment plans</strong> and <strong>FCDA approvals</strong>, we removed the barrier of fear and replaced it with festive excitement.</p>
                     </div>
-                    
-                    <h2>What This Means for Your Next Launch</h2>
-                    
-                    <p>Whether you're launching an artist's debut single (like Banke Bankz at The Grove), opening a new venue, or promoting a service, the principles remain:</p>
-                    
-                    <p>1. <strong>Find the cultural angle</strong>—How does your offer connect to larger conversations?</p>
-                    <p>2. <strong>Create multiple entry points</strong>—Different audiences need different stories.</p>
-                    <p>3. <strong>Build in flexibility</strong>—Success might require extending deadlines or scaling offers.</p>
-                    <p>4. <strong>Measure momentum, not just sales</strong>—Media coverage, social conversation, and community engagement are leading indicators.</p>
-                    
-                    <p>The Dreams Cottage Estate campaign proves that <strong>with the right strategy, any product launch can become a cultural event</strong> that earns media attention and drives unprecedented demand.</p>
-                    
-                    <p><em>Ready to transform your next launch into a cultural moment?</em></p>
-                </div>
-                
-                <!-- Share Section -->
-                <div class="share-section">
-                    <div class="share-label">Share this article:</div>
-                    <a href="#" class="share-btn twitter">𝕏</a>
-                    <a href="#" class="share-btn facebook">f</a>
-                    <a href="#" class="share-btn linkedin">in</a>
-                    <a href="#" class="share-btn whatsapp">📱</a>
+
+                    <p><em>Ready to make your next project the talk of the city?</em></p>
+                    <p><strong>Contact Dreams Cottage Estate:</strong> 07031927263, 09059925328 or DM @dreamscottageltd to book your site inspection today.</p>
+
+                    <div class="share-section">
+                        <span class="share-label">Share this article:</span>
+                        <a href="#" class="share-btn twitter" aria-label="Share on Twitter">𝕏</a>
+                        <a href="#" class="share-btn facebook" aria-label="Share on Facebook">f</a>
+                        <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">in</a>
+                        <a href="#" class="share-btn whatsapp" aria-label="Share on WhatsApp">wa</a>
+                    </div>
                 </div>
             </article>
-            
-            <!-- Sidebar -->
+
             <aside class="blog-sidebar">
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">About the Author</h3>
-                    <p>The PrymeKonet Strategy Team combines event production mastery with brand storytelling expertise. We specialize in turning launches into cultural moments.</p>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">Related Articles</h3>
-                    <ul class="related-articles">
-                        <li><a href="#">The Grove Party: Building a Weekly Cultural Hub in Lagos</a></li>
-                        <li><a href="#">Banke Bankz: Anatomy of a Debut Single Launch</a></li>
-                        <li><a href="#">Event Economics: What Makes a Nigerian Concert Profitable</a></li>
-                        <li><a href="#">5 Venue Marketing Strategies That Actually Work</a></li>
-                        <li><a href="#">From Concept to Culture: How We Built PrymeKonet</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">Article Tags</h3>
-                    <div class="tags-container">
-                        <a href="#" class="tag">Case Study</a>
-                        <a href="#" class="tag">Strategy</a>
-                        <a href="#" class="tag">Marketing</a>
-                        <a href="#" class="tag">Real Estate</a>
-                        <a href="#" class="tag">Campaign</a>
-                        <a href="#" class="tag">Media</a>
-                        <a href="#" class="tag">Nigeria</a>
-                        <a href="#" class="tag">Events</a>
-                    </div>
-                </div>
-                
                 <div class="sidebar-section cta-box">
-                    <h3 class="sidebar-title">Launch With Impact</h3>
-                    <p>Ready to transform your next project into a cultural moment? Our strategy team can help.</p>
-                    <a href="contact.html" class="btn-cta">Discuss Your Project</a>
+                    <h3 class="sidebar-title">Launch with PrymeKonet</h3>
+                    <p>We turn services into stories and promos into cultural landmarks. Let's build your brand's momentum.</p>
+                    <a href="contact.html" class="btn-cta">Work With Us</a>
                 </div>
             </aside>
         </div>
@@ -844,7 +797,7 @@
     <!-- Footer -->
     <footer class="blog-footer">
         <div class="container">
-            <a href="index.html" class="footer-logo">Pryme<span>Konet</span></a>
+            <a href="index.html" class="footer-logo" aria-label="PrymeKonet Home">Pryme<span>Konet</span></a>
             <p>Next Level Entertainment. Transforming launches into cultural moments across Nigeria.</p>
             
             <div class="footer-links">
@@ -854,7 +807,7 @@
                 <a href="Grove.html">The Grove</a>
                 <a href="Blog.html">Blog</a>
                 <a href="contact.html">Contact</a>
-                <a href="https://www.instagram.com/prymekonet/">Instagram</a>
+                <a href="https://www.instagram.com/prymekonet/" rel="noopener noreferrer">Instagram</a>
             </div>
             
             <div class="copyright">
@@ -865,59 +818,88 @@
 
     <script>
         // Mobile menu functionality
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
         });
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
-                document.querySelector('.mobile-menu-btn').classList.remove('active');
-                document.querySelector('.nav-links').classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
             });
         });
 
-        // Simple share functionality
+        // Share functionality with fallback
+        function shareArticle(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent('Check out this case study: ' + document.title);
+            
+            const shareUrls = {
+                twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+                linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+                whatsapp: `https://wa.me/?text=${text} ${url}`
+            };
+            
+            if (shareUrls[platform]) {
+                window.open(shareUrls[platform], '_blank', 'noopener,noreferrer');
+            }
+        }
+
+        // Attach share functionality
         document.querySelectorAll('.share-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                const url = window.location.href;
-                const title = document.title;
-                
-                if (this.classList.contains('twitter')) {
-                    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
-                } else if (this.classList.contains('facebook')) {
-                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-                } else if (this.classList.contains('linkedin')) {
-                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
-                } else if (this.classList.contains('whatsapp')) {
-                    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`, '_blank');
-                }
+                const platform = this.classList.contains('twitter') ? 'twitter' :
+                               this.classList.contains('facebook') ? 'facebook' :
+                               this.classList.contains('linkedin') ? 'linkedin' : 'whatsapp';
+                shareArticle(platform);
             });
         });
 
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Lazy loading for non-critical elements
+        if ('IntersectionObserver' in window) {
+            const lazyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                        lazyObserver.unobserve(element);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '50px' });
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+            // Observe animation elements
+            document.querySelectorAll('.highlight-box, .results-grid, .strategy-list').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                lazyObserver.observe(el);
             });
-        }, observerOptions);
+        }
 
-        // Animate article sections
-        document.querySelectorAll('.highlight-box, .results-grid, .strategy-list').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
+        // Add loading state for fonts
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => {
+                document.documentElement.classList.add('fonts-loaded');
+            });
+        }
+
+        // Track time to interactive
+        window.addEventListener('load', function() {
+            const perfData = performance.timing;
+            const timeToInteractive = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+            console.log('Time to Interactive:', timeToInteractive, 'ms');
         });
     </script>
 </body>
