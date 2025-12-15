@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PrymeKonet Blog - Stay updated with the latest news, events, and entertainment insights across Nigeria.">
+    <meta name="keywords" content="Nigeria events, entertainment news, blog articles, nightlife updates, Nigerian culture">
+    <title>PrymeKonet Blog | Latest News & Insights</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        /* Blog Page Specific Styles */
+        :root {
+            --orange: #FF6B35;
+            --teal: #00A7E1;
+            --yellow: #FFD166;
+            --white: #F7FFF7;
+            --navy: #1A1A2E;
+            --cream: #FFF8E8;
+            --dark-blue: #0A0A14;
+            --light-gray: #F5F5F7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--cream);
+            color: var(--navy);
+            line-height: 1.6;
+            padding-top: 80px; /* Account for fixed navbar */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header/Banner */
+        .blog-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,50 Q25,40 50,50 T100,50" stroke="rgba(255,214,102,0.1)" fill="none" stroke-width="2"/><path d="M0,60 Q25,70 50,60 T100,60" stroke="rgba(0,167,225,0.1)" fill="none" stroke-width="2"/></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+        }
+        
+        .blog-header h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .blog-tag {
+            display: inline-block;
+            background-color: var(--orange);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Featured Article */
+        .featured-article {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .featured-article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .featured-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        
+        .featured-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-details {
+            flex: 1.5;
+            padding: 40px;
+            min-width: 300px;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background-color: var(--teal);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .featured-details h2 {
+            font-family: 'Bungee', cursive;
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .source-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .abuja-press { background-color: #e63946; color: white; }
+        .nairaland { background-color: #ff9f1c; color: var(--navy); }
+        .opera-news { background-color: #2a9d8f; color: white; }
+        .state-press { background-color: #7209b7; color: white; }
+        .tv-africa { background-color: #3a86ff; color: white; }
+        
+        .date-published {
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .date-published i {
+            margin-right: 5px;
+            color: var(--orange);
+        }
+        
+        .featured-excerpt {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .read-article-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--orange), var(--yellow));
+            color: var(--navy);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .read-article-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-image {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .article-image img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+        
+        .article-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-content h3 {
+            font-family: 'Bungee', cursive;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .article-source {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--teal);
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background-color: var(--navy);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 214, 102, 0.05);
+            border-radius: 50%;
+        }
+        
+        .newsletter-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(0, 167, 225, 0.05);
+            border-radius: 50%;
+        }
+        
+        .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-content h2 {
+            font-family: 'Bungee', cursive;
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--yellow);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .newsletter-form button {
+            background: linear-gradient(45deg, var(--orange), var(--yellow));
+            color: var(--navy);
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* Footer */
+        .blog-footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .blog-footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .blog-footer a {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+        
+        /* Back to Home Button */
+        .back-to-home {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: white;
+            color: var(--navy);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--teal);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .blog-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .featured-details h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .blog-header {
+                padding: 60px 0 40px;
+            }
+            
+            .blog-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .featured-content {
+                flex-direction: column;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .featured-details {
+                padding: 25px;
+            }
+            
+            .featured-details h2 {
+                font-size: 1.5rem;
+            }
+            
+            .featured-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar (Copy from your main site) -->
+   
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="container">
+            <h1>PrymeKonet Blog</h1>
+            <p>Stay updated with the latest  news, event insights, and industry updates from across Nigeria.</p>
+            <div class="blog-tag">Featured Articles</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Back to Home -->
+        <div class="back-to-home">
+            <a href="index.html" class="back-btn">
+                <span>←</span> Back to Home
+            </a>
+        </div>
+
+        <!-- Featured Article -->
+        <section class="featured-article">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dreams Cottage Estate">
+                </div>
+                <div class="featured-details">
+                    <div class="featured-badge">Featured Article</div>
+                    <h2>Dreams Cottage Estate Unveils Special Festive Season Discount on Prime Abuja Lands</h2>
+                    
+                    <div class="featured-meta">
+                        <span class="source-badge abuja-press">Abuja Press</span>
+                        <span class="source-badge state-press">State Press</span>
+                        <span class="source-badge tv-africa">TV Africa 24</span>
+                        <div class="date-published">
+                            <i>📅</i> Published: December 2025
+                        </div>
+                    </div>
+                    
+                    <p class="featured-excerpt">
+                        Dreams Cottage Estate has announced a special festive season discount on its prime residential plots in Abuja. This limited-time offer provides prospective homeowners with an excellent opportunity to secure land in one of Abuja's most sought-after residential areas at significantly reduced prices...
+                    </p>
+                    
+                    <a href="https://www.abujapress.com/2025/12/dreams-cottage-estate-unveils-special.html" target="_blank" class="read-article-btn">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="blog-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-043788447eb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Real Estate Development">
+                </div>
+                <div class="article-content">
+                    <h3>Dreams Cottage Estate Unveils Special Festive Season Discount on Prime Abuja Lands</h3>
+                    <p class="article-excerpt">Limited-time offer for prime residential plots in Abuja with significant discounts for the festive season. A great opportunity for prospective homeowners...</p>
+                    <div class="article-footer">
+                        <span class="article-source">Abuja Press</span>
+                        <a href="https://www.abujapress.com/2025/12/dreams-cottage-estate-unveils-special.html" target="_blank" class="read-article-btn" style="padding: 8px 20px; font-size: 0.9rem;">
+                            Read
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Property Investment">
+                </div>
+                <div class="article-content">
+                    <h3>Dreams Cottage Estate Unveils Festive Season Discount</h3>
+                    <p class="article-excerpt">Nairaland discussion on the special festive season discount offered by Dreams Cottage Estate for prime Abuja lands. Community insights and reactions...</p>
+                    <div class="article-footer">
+                        <span class="article-source">Nairaland</span>
+                        <a href="https://www.nairaland.com/8574617/dreams-cottage-estate-unveils-festive" target="_blank" class="read-article-btn" style="padding: 8px 20px; font-size: 0.9rem;">
+                            Read
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Holiday Special">
+                </div>
+                <div class="article-content">
+                    <h3>Dreams Cottage Estate Unveils Special Festive Season Discount</h3>
+                    <p class="article-excerpt">Opera News coverage of the special festive discount on Abuja lands. Details about the offer and what it means for potential investors and homeowners...</p>
+                    <div class="article-footer">
+                        <span class="article-source">Opera News</span>
+                        <a href="https://opr.news/439528b7251204en_ng?link=1&client=iosnews" target="_blank" class="read-article-btn" style="padding: 8px 20px; font-size: 0.9rem;">
+                            Read
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Estate Development">
+                </div>
+                <div class="article-content">
+                    <h3>Dreams Cottage Estate Unveils Special Festive Season Discount on Prime Abuja Lands</h3>
+                    <p class="article-excerpt">State Press coverage of the limited-time festive discount on prime Abuja lands. Analysis of the real estate market and this strategic offer...</p>
+                    <div class="article-footer">
+                        <span class="article-source">State Press</span>
+                        <a href="https://www.statepress.ng/2025/12/dreams-cottage-estate-unveils-special.html" target="_blank" class="read-article-btn" style="padding: 8px 20px; font-size: 0.9rem;">
+                            Read
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="TV Coverage">
+                </div>
+                <div class="article-content">
+                    <h3>Dreams Cottage Estate Unveils Special Festive Season Discount on Prime Abuja Lands</h3>
+                    <p class="article-excerpt">TV Africa 24 report on the festive season discount for Abuja lands. Video coverage and interviews with estate representatives about the offer...</p>
+                    <div class="article-footer">
+                        <span class="article-source">TV Africa 24</span>
+                        <a href="https://tvafrica24.com/dreams-cottage-estate-unveils-special-festive-season-discount-on-prime-abuja-lands/" target="_blank" class="read-article-btn" style="padding: 8px 20px; font-size: 0.9rem;">
+                            Read
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Stay in the Loop</h2>
+                <p>Subscribe to our newsletter for the latest event updates, entertainment news, and exclusive offers straight to your inbox.</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> PrymeKonet. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p>Follow us: <a href="https://www.instagram.com/prymekonet/" target="_blank">Instagram</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.mobile-menu-btn').classList.remove('active');
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // In a real implementation, you would send this to your server
+            // For now, we'll just show an alert
+            alert(`Thank you for subscribing with ${email}! You'll receive updates from PrymeKonet soon.`);
+            this.reset();
+        });
+
+        // Add animation to articles on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe article cards for animation
+        document.querySelectorAll('.article-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Animate featured article
+        const featuredArticle = document.querySelector('.featured-article');
+        if (featuredArticle) {
+            featuredArticle.style.opacity = '0';
+            featuredArticle.style.transform = 'translateY(20px)';
+            featuredArticle.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                featuredArticle.style.opacity = '1';
+                featuredArticle.style.transform = 'translateY(0)';
+            }, 300);
+        }
+    </script>
+</body>
+</html>

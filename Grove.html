@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PrymeKonet - Nigeria's premier event platform for discovering and hosting unforgettable experiences. Find parties, concerts, and cultural events across Nigeria.">
+    <meta name="keywords" content="Nigeria events, party tickets, event hosting, Lagos parties, Abuja events, Nigerian nightlife">
+    <title>PrymeKonet | Next Level Entertainment in Nigeria</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #00A7E1;
+            --accent: #FFD166;
+            --dark: #1A1A2E;
+            --light: #F7FFF7;
+            --cream: #FFF8E8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .pryme-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255, 214, 102, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: #FF6B35;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-logo span {
+            color: #00A7E1;
+            font-family: 'Bungee', cursive;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: #F7FFF7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: #FFD166;
+        }
+
+        .nav-link.active {
+            color: #FF6B35;
+        }
+
+        .nav-link.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #FF6B35;
+            border-radius: 2px;
+        }
+
+        .btn-tickets {
+            background: linear-gradient(45deg, #FF6B35, #FFD166);
+            color: #1A1A2E;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-tickets:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-bg {
+            position: relative;
+            height: 100vh;
+            min-height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./vzt\ \(4\).jpeg') center center/cover no-repeat;
+            margin-top: 70px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-family: 'Bungee', cursive;
+        }
+
+        .hero-title span {
+            color: #FFD166;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0a0a1a 0%, #141428 100%);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bungee', cursive;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Gallery Filter */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            color: var(--light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--accent);
+            color: var(--light);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 600px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem 1rem 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .gallery-theme {
+            font-family: 'Bungee', cursive;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            padding: 1rem;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+        }
+
+        /* Existing Sections Styles */
+        .bento-artist-launch {
+            padding: 40px 20px;
+            background-color: #f7f7f7;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .bento-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: minmax(200px, auto);
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .design-services {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .artist-announcement-hero {
+            background-color: #121212;
+            color: #EAEAEA;
+            padding: 6rem 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Footer */
+        .summer-footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .link-column h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .link-column a {
+            display: block;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .link-column a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .gallery-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-bg {
+                height: 60vh;
+                min-height: 200px;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1A1A2E;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+            
+            .menu-icon {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background: #F7FFF7;
+                position: relative;
+            }
+            
+            .menu-icon:before,
+            .menu-icon:after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 2px;
+                background: #F7FFF7;
+                left: 0;
+                transition: all 0.3s ease;
+            }
+            
+            .menu-icon:before {
+                top: -8px;
+            }
+            
+            .menu-icon:after {
+                top: 8px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="pryme-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                Pryme<span>Konet</span>
+                <span class="logo-sub" style="color: #ffd166; font-size: 0.6rem; margin-top: -5px;">Nigeria's Party & Events Hub</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="host.html" class="nav-link">Host With Us</a>
+                <a href="contact.html" class="nav-link">Contact us</a>
+            </div>
+
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg" id="home">
+        <div class="hero-overlay">
+            <h1 class="hero-title">The  <span>Grove </span></h1>
+            <p class="hero-subtitle">Every Tuesday Join us at <BR> 9 Sixty Cruise <BR>
+    House 36 45 Road 1st Avenue Gwarinpa  </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Event Gallery</h2>
+            <p class="section-subtitle">Experience the vibrant moments from our past events. Relive the memories and get excited for what's next!</p>
+            
+          
+            
+            <div class="gallery-grid">
+                <!-- The Grove Events -->
+                <div class="gallery-item" data-category="grove" onclick="openLightbox(0)">
+                    <img src="lpi (5).jpeg" alt="The Grove Main Dance Floor">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">November 5, 2023</div>
+                        <div class="gallery-theme">The Grove - Amapiano Takeover</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item large" data-category="grove" onclick="openLightbox(1)">
+                    <img src="lpi (4).jpeg" alt="VIP Lounge at The Grove">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">October 29, 2023</div>
+                        <div class="gallery-theme">The Grove VIP Experience</div>
+                    </div>
+                </div>
+                
+                <!-- Concerts -->
+                <div class="gallery-item" data-category="concerts" onclick="openLightbox(2)">
+                    <img src="lpi (3).jpeg" alt="Live Concert Performance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">October 15, 2023</div>
+                        <div class="gallery-theme">Live Concert Night</div>
+                    </div>
+                </div>
+                
+                <!-- Parties -->
+                <div class="gallery-item" data-category="parties" onclick="openLightbox(3)">
+                    <img src="lpi (2).jpeg" alt="White Party">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">October 22, 2023</div>
+                        <div class="gallery-theme">All White Party</div>
+                    </div>
+                </div>
+                
+                <!-- Artists -->
+                <div class="gallery-item" data-category="artists" onclick="openLightbox(4)">
+                    <img src="lpi (1).jpeg" alt="Artist Performance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">September 10, 2023</div>
+                        <div class="gallery-theme">Artist Showcase</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="grove" onclick="openLightbox(5)">
+                    <img src="vzt (1).jpeg" alt="DJ Performance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">October 15, 2023</div>
+                        <div class="gallery-theme">The Grove - DJ Night</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="parties" onclick="openLightbox(6)">
+                    <img src="vzt (2).jpeg" alt="Crowd Energy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">September 24, 2023</div>
+                        <div class="gallery-theme">Energy Night Party</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="concerts" onclick="openLightbox(7)">
+                    <img src="vzt (3).jpeg" alt="Concert Light Show">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">September 17, 2023</div>
+                        <div class="gallery-theme">Neon Lights Concert</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="artists" onclick="openLightbox(8)">
+                    <img src="vzt (4).jpeg" alt="Banke Bankz Performance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">Coming Soon</div>
+                        <div class="gallery-theme">Banke Bankz Live</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="grove" onclick="openLightbox(9)">
+                    <img src="m (4).jpg" alt="Opening Night">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">September 3, 2023</div>
+                        <div class="gallery-theme">The Grove Opening</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button onclick="loadMoreGallery()" class="btn-tickets" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                    Load More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+   
+
+  
+
+    <!-- Footer -->
+    <footer class="summer-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Pryme<span>Konet</span></a>
+                <p>Next Level Entertainment</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/prymekonet/" aria-label="Instagram"><span aria-hidden="true">📸</span></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Explore</h4>
+                    <a href="#gallery">Gallery</a>
+                    <a href="events.html">Popular Events</a>
+                    <a href="events.html">Featured Venues</a>
+                </div>
+                <div class="link-column">
+                    <h4>Host</h4>
+                    <a href="host.html">Create Event</a>
+                    <a href="host.html">Pricing</a>
+                    <a href="host.html">Resources</a>
+                </div>
+                <div class="link-column">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="about.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="current-year"></span> PrymeKonet. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+            
+            // Toggle menu icon animation
+            const menuIcon = this.querySelector('.menu-icon');
+            if (this.classList.contains('active')) {
+                menuIcon.style.transform = 'rotate(45deg)';
+                menuIcon.style.backgroundColor = 'transparent';
+                menuIcon.before.style.transform = 'rotate(0deg) translateY(8px)';
+                menuIcon.after.style.transform = 'rotate(-90deg) translateY(-8px)';
+            } else {
+                menuIcon.style.transform = 'rotate(0deg)';
+                menuIcon.style.backgroundColor = '#F7FFF7';
+                menuIcon.before.style.transform = 'rotate(0deg) translateY(0)';
+                menuIcon.after.style.transform = 'rotate(0deg) translateY(0)';
+            }
+        });
+
+        // Gallery images data
+        const galleryImages = [
+            {
+                src: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'The Grove - Amapiano Takeover',
+                date: 'November 5, 2023',
+                category: 'grove'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'The Grove VIP Experience',
+                date: 'October 29, 2023',
+                category: 'grove'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'Live Concert Night',
+                date: 'October 15, 2023',
+                category: 'concerts'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'All White Party',
+                date: 'October 22, 2023',
+                category: 'parties'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'Artist Showcase',
+                date: 'September 10, 2023',
+                category: 'artists'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'The Grove - DJ Night',
+                date: 'October 15, 2023',
+                category: 'grove'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'Energy Night Party',
+                date: 'September 24, 2023',
+                category: 'parties'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1519677100203-4f3c1f0d12c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'Neon Lights Concert',
+                date: 'September 17, 2023',
+                category: 'concerts'
+            },
+            {
+                src: 'fp (2).jpeg',
+                title: 'Banke Bankz Live Performance',
+                date: 'Coming Soon',
+                category: 'artists'
+            },
+            {
+                src: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+                title: 'The Grove Opening Night',
+                date: 'September 3, 2023',
+                category: 'grove'
+            }
+        ];
+
+        // Gallery filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+            
+            lightboxImg.src = galleryImages[index].src;
+            caption.innerHTML = `<strong>${galleryImages[index].title}</strong> - ${galleryImages[index].date}`;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            } else if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            }
+            
+            const lightboxImg = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+            
+            lightboxImg.src = galleryImages[currentImageIndex].src;
+            caption.innerHTML = `<strong>${galleryImages[currentImageIndex].title}</strong> - ${galleryImages[currentImageIndex].date}`;
+        }
+        
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        
+        // Load more gallery items
+        function loadMoreGallery() {
+            const galleryGrid = document.querySelector('.gallery-grid');
+            const newItems = [
+                {
+                    src: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+                    date: 'August 27, 2023',
+                    title: 'Summer Vibes Party',
+                    category: 'parties'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+                    date: 'August 20, 2023',
+                    title: 'Beach Party Theme',
+                    category: 'parties'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+                    date: 'August 13, 2023',
+                    title: 'Cocktail Special Night',
+                    category: 'grove'
+                }
+            ];
+            
+            newItems.forEach((item, index) => {
+                const newIndex = galleryImages.length + index;
+                galleryImages.push(item);
+                
+                const newItem = document.createElement('div');
+                newItem.className = 'gallery-item';
+                newItem.setAttribute('data-category', item.category);
+                newItem.onclick = () => openLightbox(newIndex);
+                newItem.innerHTML = `
+                    <img src="${item.src}" alt="${item.title}">
+                    <div class="gallery-overlay">
+                        <div class="gallery-date">${item.date}</div>
+                        <div class="gallery-theme">${item.title}</div>
+                    </div>
+                `;
+                galleryGrid.appendChild(newItem);
+            });
+            
+            // Update button text
+            const loadBtn = document.querySelector('.btn-tickets[onclick="loadMoreGallery()"]');
+            loadBtn.textContent = 'More Photos Loaded!';
+            setTimeout(() => {
+                loadBtn.textContent = 'Load More Photos';
+            }, 2000);
+        }
+        
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Close mobile menu if open
+                        if (window.innerWidth <= 768) {
+                            document.querySelector('.mobile-menu-btn').classList.remove('active');
+                            document.querySelector('.nav-links').classList.remove('active');
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Add fade-in animation to gallery items on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Observe gallery items
+        document.querySelectorAll('.gallery-item').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
