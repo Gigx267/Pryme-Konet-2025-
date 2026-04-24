@@ -237,7 +237,6 @@
 
 
 
-
 <section class="campaign-cityboy" id="campaign">
     <div class="campaign-header reveal">
         <span class="campaign-tag">Cultural Movement</span>
@@ -256,14 +255,69 @@
         </div>
     </div>
 
-    <div class="bento-gallery reveal" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
-        <div style="grid-column: span 2; grid-row: span 2; border-radius: 15px; overflow: hidden;"><img src="bdd (4).jpeg" alt="Street" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 15px; overflow: hidden;"><img src="bdd (5).jpeg" alt="Youth" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 15px; overflow: hidden;"><img src="bdd (6).jpeg" alt="Gwarinpa" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 15px; overflow: hidden;"><img src="bdd (7).jpeg" alt="Community" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 15px; overflow: hidden;"><img src="bdd (8).jpeg" alt="Dreams" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    <div class="bento-gallery reveal">
+        <div class="bento-item bento-large"><img src="bdd (4).jpeg" alt="Street"></div>
+        <div class="bento-item"><img src="bdd (5).jpeg" alt="Youth"></div>
+        <div class="bento-item"><img src="bdd (6).jpeg" alt="Gwarinpa"></div>
+        <div class="bento-item"><img src="bdd (7).jpeg" alt="Community"></div>
+        <div class="bento-item"><img src="bdd (8).jpeg" alt="Dreams"></div>
     </div>
 </section>
+
+<style>
+.bento-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(240px, auto);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+.bento-item {
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 220px;
+}
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+}
+.bento-item:hover img {
+    transform: scale(1.05);
+}
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+@media (max-width: 992px) {
+    .bento-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 680px) {
+    .bento-gallery {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    .bento-gallery .bento-item {
+        min-height: 320px;
+    }
+    .bento-large {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+</style>
+
 <section class="testimonials" id="testimonials">
     <div style="text-align: center; margin-bottom: 3rem;" class="reveal">
         <h2 style="font-family: 'Bungee'; color: var(--white); font-size: 2.5rem;">What People Say</h2>
